@@ -38,3 +38,13 @@
       dimensions:
         height: 4.18
       placement: Center
+
+- name: Sharknado
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/cutenado.jpg
+      dimensions:
+        height: 4.18
+      placement: Center

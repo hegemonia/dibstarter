@@ -42,7 +42,11 @@ class ScalablePress
   end
 
   def create_product(design, design_id)
-    Product.create([{ name: design['name'], design_id: design_id, preview_url: design['sides']['front']['artwork']}])
+    Product.create([{
+      name: design['name'],
+      design_id: design_id,
+      preview_url: design['sides']['front']['artwork'],
+      price: design['price']}])
   end
 end
 

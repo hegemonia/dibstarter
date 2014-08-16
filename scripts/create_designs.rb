@@ -8,7 +8,6 @@ require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
   include HTTMultiParty
-  debug_output $stderr
 
   base_uri "https://api.scalablepress.com/v2"
   basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
@@ -44,6 +43,7 @@ class ScalablePress
   def create_product(design, design_id)
     Product.create([{
       name: design['name'],
+      design_type: design['type'],
       design_id: design_id,
       preview_url: design['sides']['front']['artwork'],
       price: design['price']}])

@@ -5,9 +5,6 @@
   sides:
     front:
       artwork: /images/EliseSari.png 
-      colors:
-        - white
-        - blue
       dimensions:
         width: 5
       placement: Right chest
@@ -18,9 +15,6 @@
   sides:
     front:
       artwork: /images/EliseSari.png 
-      colors:
-        - white
-        - blue
       dimensions:
         width: 5
       placement: Right chest

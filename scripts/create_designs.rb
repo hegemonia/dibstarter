@@ -24,17 +24,13 @@ class ScalablePress
   end
 
   def create_design(design)
-    colors = design['sides']['front']['colors'].each_with_index.map do |color, index|
-      {"sides[front][colors][#{index}]" => color}
-    end.reduce({}, &:merge)
-
     params = {
       'name' => design['name'],
       'type' => design['type'],
       'sides[front][dimensions][width]' => design['sides']['front']['dimensions']['width'],
       'sides[front][placement]' => design['sides']['front']['placement'],
       'sides[front][artwork]' => File.open(File.join(PUBLIC, design['sides']['front']['artwork']))
-    }.merge(colors)
+    }
 
     result = self.class.post("/design", :query => params)
 

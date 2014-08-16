@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20140816043359) do
   enable_extension "plpgsql"
 
   create_table "products", force: true do |t|
+    t.string   "name"
+    t.string   "design_id"
+    t.string   "preview_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

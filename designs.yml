@@ -24,12 +24,7 @@
   price: 20.00
   sides:
     front:
-<<<<<<< HEAD
       artwork: /images/colors.png
-      proof: /images/colorsGreyProof.jpg
-=======
-      artwork: /images/colors.jpg
->>>>>>> 54e787e8293da58eb9055ba111711c9e659ecf5e
       dimensions:
         height: 16
       placement: Right chest
@@ -41,12 +36,5 @@
     front:
       artwork: /images/bunnies.png
       dimensions:
-<<<<<<< HEAD
-        height: 16
-      placement: Right chest
-=======
         height: 4.18
       placement: Center
-
-
->>>>>>> 54e787e8293da58eb9055ba111711c9e659ecf5e

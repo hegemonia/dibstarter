@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140816160524) do
   enable_extension "plpgsql"
 
   create_table "billing_details", force: true do |t|
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "payment_gateway"
     t.string   "payment_token"
     t.datetime "created_at"

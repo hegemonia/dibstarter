@@ -8,7 +8,6 @@ require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
   include HTTMultiParty
-  debug_output $stderr
 
   base_uri "https://api.scalablepress.com/v2"
   basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
@@ -44,8 +43,11 @@ class ScalablePress
     }
 
     result = self.class.post("/quote", :query => params)
-
-    JSON.parse(result.body)['orderToken']
+    if (result.code == 200) 
+      JSON.parse(result.body)['orderToken']
+    else
+      raise result.body
+    end
   end
 
   def create_order(order_token)
@@ -53,7 +55,11 @@ class ScalablePress
       'orderToken' => order_token
     }
     result = self.class.post("/order", :query => params)
-    JSON.parse(result.body)['orderId']
+    if (result.code == 200)
+      JSON.parse(result.body)['orderId']
+    else
+      raise result.body
+    end
   end
 end
 

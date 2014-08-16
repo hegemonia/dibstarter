@@ -25,7 +25,6 @@
   sides:
     front:
       artwork: /images/colors.jpg
-      proof: /images/colorsGreyProof.jpg
       dimensions:
         height: 18
       placement: Right chest
@@ -36,7 +35,8 @@
   sides:
     front:
       artwork: /images/bunnies.png
-      proof: /images/bunniesWhiteProof.jpg
       dimensions:
-        height: 18
-      placement: Right chest
+        height: 4.18
+      placement: Center
+
+

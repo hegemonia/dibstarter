@@ -18,7 +18,8 @@ class ScalablePress
       dibs = Dib.where(product_id:product.id)
       dibs.each do |dib|
         billing_detail = dib.billing_detail
-        create_quote(billing_detail, product.design_type, product.design_id)
+        order_token = create_quote(billing_detail, product.design_type, product.design_id)
+        puts(order_token)
       end
     end
   end
@@ -27,10 +28,10 @@ class ScalablePress
     params = {
       'type' => design_type,
       'sides[front]' => 1,
-      'products[0][id]' => 'gildan-sweatshirt-crew',
+      'products[0][id]' => 'american-apparel-t-shirt',
       'products[0][color]' => 'ash',
       'products[0][size]' => 'lrg',
-      'products[0][quantity]' => '12',
+      'products[0][quantity]' => '1',
       'address[name]' => billing_detail.name,
       'address[address1]' => billing_detail.address1,
       'address[address2]' => billing_detail.address2,

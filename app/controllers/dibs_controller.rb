@@ -15,6 +15,7 @@ class DibsController < ApplicationController
       name: params[:billing_detail_name],
       address1: params[:billing_detail_address1],
       address2: params[:billing_detail_address2],
+      city: params[:billing_detail_city],
       state: params[:billing_detail_state],
       zip: params[:billing_detail_zip]
     )

@@ -16,5 +16,4 @@ test:
   password: postgres
 
 production:
-  <<: *default
-  database: dibstarter_production
+  url: <%= ENV['DATABASE_URL'] %>

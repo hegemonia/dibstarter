@@ -15,3 +15,6 @@ test:
   username: postgres
   password: postgres
 
+production:
+  <<: *default
+  database: dibstarter_production

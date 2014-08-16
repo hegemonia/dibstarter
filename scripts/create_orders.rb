@@ -20,6 +20,8 @@ class ScalablePress
         billing_detail = dib.billing_detail
         order_token = create_quote(billing_detail, product.design_type, product.design_id)
         puts(order_token)
+        order_id = create_order(order_token)
+        puts("ORDER ID: " + order_id)
       end
     end
   end

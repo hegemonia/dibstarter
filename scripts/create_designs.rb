@@ -20,6 +20,10 @@ class ScalablePress
         puts(design_id)
         product = create_product(design, design_id)
         puts(product)
+        order_token = create_quote(design['type'], design_id)
+        puts("TOKEN: " + order_token)
+        order_id = create_order(order_token)
+        puts("ORDER ID: " + order_id)
     end
   end
 
@@ -43,6 +47,35 @@ class ScalablePress
       design_id: design_id,
       preview_url: design['sides']['front']['artwork'],
       price: design['price']}])
+  end
+
+  def create_quote(design_type, design_id)
+    params = {
+      'type' => design_type,
+      'sides[front]' => 1,
+      'products[0][id]' => 'gildan-sweatshirt-crew',
+      'products[0][color]' => 'ash',
+      'products[0][size]' => 'lrg',
+      'products[0][quantity]' => '12',
+      'address[name]' => 'Elise McCallum',
+      'address[address1]' => '193B Henry Street',
+      'address[city]' => 'San Francisco',
+      'address[state]' => 'CA',
+      'address[zip]' => 94114,
+      'designId' => design_id
+    }
+
+    result = self.class.post("/quote", :query => params)
+
+    JSON.parse(result.body)['orderToken']
+  end
+
+  def create_order(order_token)
+    params = {
+      'orderToken' => order_token
+    }
+    result = self.class.post("/order", :query => params)
+    JSON.parse(result.body)['orderId']
   end
 end
 

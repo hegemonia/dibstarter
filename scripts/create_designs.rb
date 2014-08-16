@@ -1,22 +1,49 @@
+RAILS_ROOT=File.expand_path("../../", __FILE__)
+PUBLIC=File.join(RAILS_ROOT, "public")
+
 require 'httmultiparty'
 require 'json'
+require 'yaml'
+require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
-	include HTTMultiParty
-	base_uri "https://api.scalablepress.com/v2"
-	basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
+  include HTTMultiParty
+  debug_output $stderr
 
-	def create_design
-		@result = self.class.post("/design",
-			:query => { 
-				'type' => 'dtg',
-				'sides[front][colors][0]' => 'white',
-				'sides[front][dimensions][width]' => '5',
-				'sides[front][artwork]' => File.open('/Users/Thoughtworks/Downloads/EliseSari.png')
-			})
+  base_uri "https://api.scalablepress.com/v2"
+  basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
 
-		@design_id = JSON.parse(@result.body, symbolize_names:true)[:designId])
-	end
+  def create_designs
+    designs = YAML.load(File.open("designs.yml"))
+      designs.each do |design|
+        design_id = create_design(design)
+        puts(design_id)
+        product = create_product(design, design_id)
+        puts(product)
+    end
+  end
+
+  def create_design(design)
+    colors = design['sides']['front']['colors'].each_with_index.map do |color, index|
+      {"sides[front][colors][#{index}]" => color}
+    end.reduce({}, &:merge)
+
+    params = {
+      'name' => design['name'],
+      'type' => design['type'],
+      'sides[front][dimensions][width]' => design['sides']['front']['dimensions']['width'],
+      'sides[front][placement]' => design['sides']['front']['placement'],
+      'sides[front][artwork]' => File.open(File.join(PUBLIC, design['sides']['front']['artwork']))
+    }.merge(colors)
+
+    result = self.class.post("/design", :query => params)
+
+    JSON.parse(result.body)['designId']
+  end
+
+  def create_product(design, design_id)
+    Product.create([{ name: design['name'], design_id: design_id, preview_url: design['sides']['front']['artwork']}])
+  end
 end
 
-ScalablePress.new.create_design
+ScalablePress.new.create_designs

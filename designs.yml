@@ -28,3 +28,13 @@
       dimensions:
         height: 4.18
       placement: Center
+
+- name: Battleship
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/battleshippy.jpg
+      dimensions:
+        height: 4.18
+      placement: Center

@@ -34,7 +34,7 @@
   price: 20.00
   sides:
     front:
-      artwork: /images/bunnies.png
+      artwork: /images/bunnies.jpg
       dimensions:
         height: 4.18
       placement: Center

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :products
+
+  resources :products do
+    resources :dibs
+  end
 
   scope :user do
     resources :billing_details

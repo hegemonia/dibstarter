@@ -1,0 +1,13 @@
+<%= @product.name %>
+
+<%= form_tag(product_dibs_path, method: "post") do %>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_4TXp3dsLJkD3sKe7ILqGyOAe"
+    data-image="/square-image.png"
+    data-name="dibstarter"
+    data-description="A Shirt ($20.00)"
+    data-amount="2000"
+    data-email="<%= @user.email %>">
+  </script>
+<% end %>

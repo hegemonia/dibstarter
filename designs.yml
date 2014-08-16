@@ -1,5 +1,5 @@
 ---
-- name: Elise Navidad
+- name: Sorry
   type: dtg
   price: 15.00
   sides:
@@ -45,6 +45,16 @@
   sides:
     front:
       artwork: /images/cutenado.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Navidad
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/elise.jpg
       dimensions:
         height: 4.18
       placement: Center

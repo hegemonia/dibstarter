@@ -8,7 +8,16 @@ class DibsController < ApplicationController
   end
 
   def create
-    @billing_detail = BillingDetail.new(user: current_user, payment_gateway: 'stripe', payment_token: params['stripeToken'])
+    @billing_detail = BillingDetail.new(
+      user: current_user,
+      payment_gateway: 'stripe',
+      payment_token: params[:stripeToken],
+      name: params[:billing_detail_name],
+      address1: params[:billing_detail_address1],
+      address2: params[:billing_detail_address2],
+      state: params[:billing_detail_state],
+      zip: params[:billing_detail_zip]
+    )
     @billing_detail.save!
     @dib = Dib.new(user_id: current_user.id, billing_detail_id: @billing_detail.id, product_id: params[:product_id])
     @dib.save!

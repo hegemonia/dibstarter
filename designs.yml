@@ -18,3 +18,25 @@
       dimensions:
         width: 5
       placement: Right chest
+
+- name: Colors
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/colors.jpg
+      proof: /images/colorsGreyProof.jpg
+      dimensions:
+        height: 18
+      placement: Right chest
+
+- name: Bunnies
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/bunnies.png
+      proof: /images/bunniesWhiteProof.jpg
+      dimensions:
+        height: 18
+      placement: Right chest

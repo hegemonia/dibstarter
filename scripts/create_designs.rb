@@ -8,6 +8,7 @@ require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
   include HTTMultiParty
+  debug_output $stderr
 
   base_uri "https://api.scalablepress.com/v2"
   basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
@@ -22,18 +23,29 @@ class ScalablePress
         order_token = create_quote(design['type'], design_id)
         puts("TOKEN: " + order_token)
         order_id = create_order(order_token)
-        puts("ORDER ID: " + order_id)
+        puts(order_id)
     end
   end
 
   def create_design(design)
-    params = {
+    dimension_type = 'height'
+    dimension =
+      if (design['sides']['front']['dimensions']['width'].nil?)
+        design['sides']['front']['dimensions']['height']
+      else
+        dimension_type = 'width'
+        design['sides']['front']['dimensions']['width']
+      end
+
+      params = {
       'name' => design['name'],
       'type' => design['type'],
-      'sides[front][dimensions][width]' => design['sides']['front']['dimensions']['width'],
+      "sides[front][dimensions][#{dimension_type}]" => dimension,
       'sides[front][placement]' => design['sides']['front']['placement'],
       'sides[front][artwork]' => File.open(File.join(PUBLIC, design['sides']['front']['artwork']))
     }
+
+    p params
 
     result = self.class.post("/design", :query => params)
 

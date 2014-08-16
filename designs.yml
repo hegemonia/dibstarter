@@ -24,10 +24,10 @@
   price: 20.00
   sides:
     front:
-      artwork: /images/colors.jpg
+      artwork: /images/colors.png
       proof: /images/colorsGreyProof.jpg
       dimensions:
-        height: 18
+        height: 16
       placement: Right chest
 
 - name: Bunnies
@@ -38,5 +38,5 @@
       artwork: /images/bunnies.png
       proof: /images/bunniesWhiteProof.jpg
       dimensions:
-        height: 18
+        height: 16
       placement: Right chest

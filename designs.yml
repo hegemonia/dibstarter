@@ -1,17 +1,7 @@
 ---
-- name: Design One
+- name: Elise Navidad
   type: dtg
   price: 15.00
-  sides:
-    front:
-      artwork: /images/EliseSari.png 
-      dimensions:
-        width: 5
-      placement: Right chest
-
-- name: Design Two
-  type: dtg
-  price: 20.00
   sides:
     front:
       artwork: /images/EliseSari.png 

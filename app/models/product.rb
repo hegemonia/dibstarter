@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :price
 
   def dibbed? user
-    Dib.where(user_id: user.id, product_id: self.id).first.present?
+    user && Dib.where(user_id: user.id, product_id: self.id).first.present?
   end
 
   def description

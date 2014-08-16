@@ -10,7 +10,7 @@
       <img src=<%= product.preview_url %> alt="...">
       <div class="caption">
         <h3><%= product.name %></h3>
-        <h4><%= product.price %></h4>
+        <h4><%= number_to_currency(product.price) %></h4>
         
         <p><%= link_to 'Dib It', :controller => "dibs", :action => "new", :product_id => product.id %></p>
       </div>

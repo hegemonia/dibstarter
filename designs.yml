@@ -1,16 +1,5 @@
 ---
-- name: Sorry
-  type: dtg
-  price: 15.00
-  color: white
-  sides:
-    front:
-      artwork: /images/EliseSari.png 
-      dimensions:
-        width: 5
-      placement: Right chest
-
-- name: Colors
+- name: Stroop Test
   type: dtg
   price: 20.00
   color: white
@@ -21,7 +10,7 @@
         height: 16
       placement: Right chest
 
-- name: Bunnies
+- name: Role-playing
   type: dtg
   price: 20.00
   color: white
@@ -43,7 +32,7 @@
         height: 4.18
       placement: Center
 
-- name: Sharknado
+- name: Happy Sharknado
   type: dtg
   price: 20.00
   color: white
@@ -54,18 +43,7 @@
         height: 4.18
       placement: Center
 
-- name: Navidad
-  type: dtg
-  price: 20.00
-  color: white
-  sides:
-    front:
-      artwork: /images/elise.jpg
-      dimensions:
-        height: 4.18
-      placement: Center
-
-- name: Dwarves
+- name: Dwarvicons
   type: dtg
   price: 20.00
   color: white
@@ -76,7 +54,7 @@
         height: 4.18
       placement: Center
 
-- name: Foxes
+- name: Foxtrot
   type: dtg
   price: 20.00
   color: white
@@ -98,7 +76,7 @@
         height: 4.18
       placement: Center
 
-- name: That Center
+- name: The Good Stuff
   type: dtg
   price: 20.00
   color: white
@@ -120,7 +98,7 @@
         height: 4.18
       placement: Center
 
-- name: Who’s There?
+- name: Who?
   type: dtg
   price: 20.00
   color: white

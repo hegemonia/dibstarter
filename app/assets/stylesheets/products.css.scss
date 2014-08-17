@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'colors';
+
 .product {
   text-align: center;
 
-  .btn:visited {
-    color: white;
+  .btn {
+    color: $linkTextColor;
+    background-color: $linkColor;
+    border-color: $linkColorHighlight;
+  }
+
+  .btn.disabled {
+    color: $linkTextColor;
+    background-color: $linkColorDisabled;
+    border-color: $linkColorDisabledHighlight;
   }
 
   .thumbnail {

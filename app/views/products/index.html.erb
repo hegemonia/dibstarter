@@ -24,9 +24,9 @@
         <h4><%= number_to_currency(product.price) %></h4>
 
         <% if product.dibbed?(current_user) %>
-          <%= link_to 'You dibbed it!', '', class: 'btn btn-primary disabled' %>
+          <%= link_to 'You\'ve got dibs on this!', '', class: 'btn btn-primary disabled' %>
         <% else %>
-          <%= link_to 'Dib It', {:controller => "dibs", :action => "new", :product_id => product.id}, class: 'btn btn-primary' %>
+          <%= link_to 'Call dibs on this!', {:controller => "dibs", :action => "new", :product_id => product.id}, class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>

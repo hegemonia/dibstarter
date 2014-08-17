@@ -21,6 +21,8 @@ class ScalablePress
         puts(order_token)
         order_id = create_order(order_token)
         puts("ORDER ID: " + order_id)
+        dib.order!
+        puts("DIB STATE: " + dib.state)
       end
     end
   end

@@ -1,18 +1,14 @@
 
-
+<div class="container">
 <%= form_tag(product_dibs_path, method: "post") do %>
-  <%= label_tag(:name, "Name:") %>
-  <%= text_field_tag(:billing_detail_name) %>
-  <%= label_tag(:address1, "Address Line 1:") %>
-  <%= text_field_tag(:billing_detail_address1) %>
-  <%= label_tag(:city, "City:") %>
-  <%= text_field_tag(:billing_detail_city) %>
-  <%= label_tag(:state, "State:") %>
-  <%= text_field_tag(:billing_detail_state) %>
-  <%= label_tag(:zip, "Zip:") %>
-  <%= text_field_tag(:billing_detail_zip) %>
-  <%= label_tag(:size, "Size:") %>
-  <%= select_tag(:size, options_for_select(@sizes)) %>
+  <%= text_field_tag(:billing_detail_name, '', :placeholder => "Name", :class => "form-control") %>
+  <%= text_field_tag(:billing_detail_address1, '', :placeholder => "Address Line 1", :class => "form-control") %>
+  <%= text_field_tag(:billing_detail_address2, '', :placeholder => "Address Line 2", :class => "form-control") %>
+  <%= text_field_tag(:billing_detail_city, '', :placeholder => "City", :class => "form-control") %>
+  <%= text_field_tag(:billing_detail_state, '', :placeholder => "State", :class => "form-control") %>
+  <%= text_field_tag(:billing_detail_zip, '', :placeholder => "Zipcode", :class => "form-control") %>
+  <%= select_tag(:size, options_for_select(@sizes), :class => "form-control") %>
+  <br/>
 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -24,3 +20,4 @@
     data-email="<%= @user.email %>">
   </script>
 <% end %>
+</div>

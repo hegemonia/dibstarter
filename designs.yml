@@ -3,7 +3,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: Tom
   sides:
     front:
       artwork: /images/colors.png
@@ -15,7 +15,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: ApeLad
   sides:
     front:
       artwork: /images/bunnies.jpg
@@ -27,7 +27,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: bandy78
   sides:
     front:
       artwork: /images/battleshippy.png
@@ -39,7 +39,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: brockart
   sides:
     front:
       artwork: /images/cutenado.jpg
@@ -51,7 +51,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: collinvh
   sides:
     front:
       artwork: /images/dwarves.jpg
@@ -63,7 +63,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: dijay
   sides:
     front:
       artwork: /images/foxes.jpg
@@ -75,7 +75,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: graffd02
   sides:
     front:
       artwork: /images/manybunnies.jpg
@@ -87,7 +87,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: grantwall
   sides:
     front:
       artwork: /images/oreo.jpg
@@ -99,7 +99,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: helgram
   sides:
     front:
       artwork: /images/plants.jpg
@@ -111,10 +111,71 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: inu14
   sides:
     front:
       artwork: /images/who.png
       dimensions:
         height: 4.18
       placement: Center
+
+- name: Hallow’s Eve
+  type: dtg
+  price: 20.00
+  color: white
+  artist: MelS
+  sides:
+    front:
+      artwork: /images/beforexmas.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Calvinball
+  type: dtg
+  price: 20.00
+  color: white
+  artist: LPyne
+  sides:
+    front:
+      artwork: /images/calvinball.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Love!
+  type: dtg
+  price: 20.00
+  color: white
+  artist: orabbit
+  sides:
+    front:
+      artwork: /images/corgi.png
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Probable Cause
+  type: dtg
+  price: 20.00
+  color: white
+  artist: qetza
+  sides:
+    front:
+      artwork: /images/probablecause.png
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Wisps
+  type: dtg
+  price: 20.00
+  color: white
+  artist: tjost
+  sides:
+    front:
+      artwork: /images/wisps.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+

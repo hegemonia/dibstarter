@@ -30,7 +30,7 @@ class Product < ActiveRecord::Base
   end
 
   def description
-    "#{name} (#{number_to_currency(price)})"
+    "#{name} t-shirt (#{number_to_currency(price)})"
   end
 
   def price_in_cents

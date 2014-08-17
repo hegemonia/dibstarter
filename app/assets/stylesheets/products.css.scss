@@ -4,7 +4,19 @@
 
 .product {
   .thumbnail {
+    line-height: 0;
     padding: 0;
+  }
+
+  .progress-bar {
+    min-width: 0;
+    background-color: #7ed321;
+  }
+
+  .progress {
+    background-color: #4a90e2;
+    height: 30px;
+    border-radius: 0;
   }
 
   .preview {

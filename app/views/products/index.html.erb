@@ -5,9 +5,24 @@
   <div class="col-sm-6 col-md-4 product">
     <div class="thumbnail">
       <div class="preview" style="background-image:url('<%= product.preview_url %>')"></div>
+      
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="<%= product.conversion_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= product.conversion_percentage %>%;">
+          <span class="sr-only"><%= product.conversion_percentage %>% Complete</span>
+        </div>
+      </div>
+      <div class="">
+        <% if product.dibs.count.zero? %>
+          <p>No dibs yet!</p>
+        <% else %>
+          <p><%= product.dibs.count %> dibbed, <%= product.outstanding %> to go!</p>
+        <% end %>
+      </div>
+
       <div class="caption">
         <h3><%= product.name %></h3>
         <h4><%= number_to_currency(product.price) %></h4>
+
 
         <% if product.dibbed?(current_user) %>
           <p>You dibbed it!</p>

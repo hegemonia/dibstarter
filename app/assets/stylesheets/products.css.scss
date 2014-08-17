@@ -7,6 +7,10 @@
 .product {
   text-align: center;
 
+  h3 {
+    margin: 0;
+  }
+
   .btn {
     color: $linkTextColor;
     background-color: $linkColor;

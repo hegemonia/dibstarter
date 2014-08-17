@@ -31,7 +31,7 @@ class DibsController < ApplicationController
       size: params[:size]
     )
     dib.save!
-    DibPlacementMailer.send_dib_placed_email(dib)
+    DibPlacementMailer.send_dib_placed_email(dib).deliver
     redirect_to controller: 'products'
   end
 end

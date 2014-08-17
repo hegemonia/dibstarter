@@ -14,19 +14,23 @@ class ScalablePress
       dibs = Dib.initial.where(product_id:product.id)
       dibs.each do |dib|
         billing_detail = dib.billing_detail
-        order_token = create_quote(dib, billing_detail, product.design_type, product.design_id)
-        puts(order_token)
-        charge = perform_charge(dib)
+        begin
+          order_token = create_quote(dib, billing_detail, product.design_type, product.design_id)
+          puts(order_token)
+          charge = perform_charge(dib)
 
-        if charge
-          puts("CHARGE ID: #{charge.id}")
-          dib.pay! charge.id
+          if charge
+            puts("CHARGE ID: #{charge.id}")
+            dib.pay! charge.id
   
-          order_id = create_order(order_token)
-          dib.order! order_id
+            order_id = create_order(order_token)
+            dib.order! order_id
 
-          puts("DIB: #{dib.inspect}")
-          OrderPlacementMailer.send_order_placed_email(dib).deliver
+            puts("DIB: #{dib.inspect}")
+            OrderPlacementMailer.send_order_placed_email(dib).deliver
+          end
+          rescue Exception => e
+            puts e
         end
       end
     end
@@ -71,9 +75,9 @@ class ScalablePress
 
     result = self.class.post("/quote", :query => params)
     if (result.code == 200) 
-      JSON.parse(result.body)['orderToken']
+      JSON.parse(result.body)['orderToken'] or raise result
     else
-      raise result.body
+      raise result
     end
   end
 

@@ -25,6 +25,7 @@ class ScalablePress
         charge(dib)
         dib.order!
         puts("DIB STATE: " + dib.state)
+        OrderPlacementMailer.send_order_placed_email(dib).deliver
       end
     end
   end

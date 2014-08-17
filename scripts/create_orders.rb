@@ -14,10 +14,10 @@ class ScalablePress
 
   def create_orders
     Product.all.each do |product|
-      dibs = Dib.where(product_id:product.id)
+      dibs = Dib.initial.where(product_id:product.id)
       dibs.each do |dib|
         billing_detail = dib.billing_detail
-        order_token = create_quote(billing_detail, product.design_type, product.design_id)
+        order_token = create_quote(dib, billing_detail, product.design_type, product.design_id)
         puts(order_token)
         order_id = create_order(order_token)
         puts("ORDER ID: " + order_id)
@@ -25,13 +25,13 @@ class ScalablePress
     end
   end
 
-  def create_quote(billing_detail, design_type, design_id)
+  def create_quote(dib, billing_detail, design_type, design_id)
     params = {
       'type' => design_type,
       'sides[front]' => 1,
-      'products[0][id]' => 'american-apparel-t-shirt',
-      'products[0][color]' => 'ash',
-      'products[0][size]' => 'lrg',
+      'products[0][id]' => dib.medium,
+      'products[0][color]' => dib.color,
+      'products[0][size]' => dib.size,
       'products[0][quantity]' => '1',
       'address[name]' => billing_detail.name,
       'address[address1]' => billing_detail.address1,

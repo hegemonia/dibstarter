@@ -13,3 +13,17 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "products";
+
+.form-signin {
+  width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.remember-label {
+  font-weight: normal;
+}

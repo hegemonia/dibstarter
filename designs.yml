@@ -3,7 +3,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: Tom
   sides:
     front:
       artwork: /images/colors.png
@@ -15,7 +15,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: ApeLad
   sides:
     front:
       artwork: /images/bunnies.jpg
@@ -27,7 +27,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: bandy78
   sides:
     front:
       artwork: /images/battleshippy.png
@@ -39,7 +39,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: brockart
   sides:
     front:
       artwork: /images/cutenado.jpg
@@ -51,7 +51,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: collinvh
   sides:
     front:
       artwork: /images/dwarves.jpg
@@ -63,7 +63,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: dijay
   sides:
     front:
       artwork: /images/foxes.jpg
@@ -75,7 +75,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: graffd02
   sides:
     front:
       artwork: /images/manybunnies.jpg
@@ -87,7 +87,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: grantwall
   sides:
     front:
       artwork: /images/oreo.jpg
@@ -99,7 +99,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: helgram
   sides:
     front:
       artwork: /images/plants.jpg
@@ -111,7 +111,7 @@
   type: dtg
   price: 20.00
   color: white
-  artist: Thomas Wu
+  artist: inu14
   sides:
     front:
       artwork: /images/who.png

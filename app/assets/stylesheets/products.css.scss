@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .product {
+  text-align: center;
+
+  .btn:visited {
+    color: white;
+  }
+
   .thumbnail {
     line-height: 0;
     padding: 0;

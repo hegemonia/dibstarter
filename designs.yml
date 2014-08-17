@@ -2,6 +2,7 @@
 - name: Sorry
   type: dtg
   price: 15.00
+  color: white
   sides:
     front:
       artwork: /images/EliseSari.png 
@@ -12,6 +13,7 @@
 - name: Colors
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/colors.png
@@ -22,6 +24,7 @@
 - name: Bunnies
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/bunnies.jpg
@@ -32,6 +35,7 @@
 - name: Battleship
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/battleshippy.png
@@ -42,6 +46,7 @@
 - name: Sharknado
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/cutenado.jpg
@@ -52,6 +57,7 @@
 - name: Navidad
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/elise.jpg
@@ -62,6 +68,7 @@
 - name: Dwarves
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/dwarves.jpg
@@ -72,6 +79,7 @@
 - name: Foxes
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/foxes.jpg
@@ -82,6 +90,7 @@
 - name: Bunches of Bunnies
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/manybunnies.jpg
@@ -92,6 +101,7 @@
 - name: That Center
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/oreo.jpg
@@ -102,6 +112,7 @@
 - name: Green Thumb
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/plants.jpg
@@ -112,6 +123,7 @@
 - name: Who’s There?
   type: dtg
   price: 20.00
+  color: white
   sides:
     front:
       artwork: /images/who.png

@@ -57,6 +57,7 @@ class ScalablePress
       design_type: design['type'],
       design_id: design_id,
       preview_url: design['sides']['front']['artwork'],
+      color: design['color'],
       price: design['price']}])
   end
 

@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
     "#{name} (#{number_to_currency(price)})"
   end
 
-  def amount_in_cents
+  def price_in_cents
     (price * 100).to_i
   end
 end

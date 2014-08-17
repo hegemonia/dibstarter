@@ -8,6 +8,7 @@ require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
   include HTTMultiParty
+  debug_output $stderr
 
   base_uri "https://api.scalablepress.com/v2"
   basic_auth '', '2ceaad81c00f173eaf11fc2412216885'
@@ -21,10 +22,31 @@ class ScalablePress
         puts(order_token)
         order_id = create_order(order_token)
         puts("ORDER ID: " + order_id)
+        charge(dib)
         dib.order!
         puts("DIB STATE: " + dib.state)
       end
     end
+  end
+
+  def charge(dib)
+    Stripe.api_key = STRIPE_SECRET_KEY
+
+    # Get the credit card details submitted by the form
+    token = dib.billing_detail.payment_token
+
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+        charge = Stripe::Charge.create(
+        :amount => dib.product.price_in_cents,
+        :currency => "usd",
+        :card => token,
+        :description => dib.product.description
+      )
+      rescue Stripe::CardError => e
+      # The card has been declined
+    end
+
   end
 
   def create_quote(dib, billing_detail, design_type, design_id)

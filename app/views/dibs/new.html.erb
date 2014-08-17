@@ -11,6 +11,8 @@
   <%= text_field_tag(:billing_detail_state) %>
   <%= label_tag(:zip, "Zip:") %>
   <%= text_field_tag(:billing_detail_zip) %>
+  <%= label_tag(:size, "Size:") %>
+  <%= select_tag(:size, options_for_select(@sizes)) %>
 
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"

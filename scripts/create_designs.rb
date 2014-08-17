@@ -58,8 +58,7 @@ class ScalablePress
       design_id: design_id,
       preview_url: design['sides']['front']['artwork'],
       color: design['color'],
-      artist: design['artist'],
-      price: design['price']}])
+      artist: design['artist']}])
   end
 
 end

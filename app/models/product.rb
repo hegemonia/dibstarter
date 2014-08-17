@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
   end
 
   def threshold
-    3
+    pricing_model.threshold
   end
 
   def outstanding
@@ -35,5 +35,35 @@ class Product < ActiveRecord::Base
 
   def price_in_cents
     (price * 100).to_i
+  end
+
+  def price
+    pricing_model.price
+  end
+
+  private
+
+  def pricing_model
+    Dib.ordered.where(product_id: self.id).count > 0 ? HigherTierPricing.new : LowerTierPricing.new
+  end
+
+  class LowerTierPricing
+    def threshold
+      3
+    end
+
+    def price
+      25
+    end
+  end
+
+  class HigherTierPricing
+    def threshold
+      10
+    end
+
+    def price
+      20
+    end
   end
 end

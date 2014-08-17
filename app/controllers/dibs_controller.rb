@@ -4,6 +4,7 @@ class DibsController < ApplicationController
   def new
     @user = current_user
     @product = Product.find(params[:product_id])
+    @sizes = Size.all
     @dib = Dib.new
   end
 
@@ -26,7 +27,7 @@ class DibsController < ApplicationController
       product_id: params[:product_id],
       medium: 'american-apparel-t-shirt',
       color: params[:color] || 'ash',
-      size: params[:size] || 'lrg'
+      size: params[:size]
     )
     @dib.save!
 

@@ -58,3 +58,63 @@
       dimensions:
         height: 4.18
       placement: Center
+
+- name: Dwarves
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/dwarves.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Foxes
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/foxes.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Bunches of Bunnies
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/manybunnies.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: That Center
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/oreo.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Green Thumb
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/plants.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Who’s There?
+  type: dtg
+  price: 20.00
+  sides:
+    front:
+      artwork: /images/who.png
+      dimensions:
+        height: 4.18
+      placement: Center

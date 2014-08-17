@@ -20,7 +20,14 @@ class DibsController < ApplicationController
       zip: params[:billing_detail_zip]
     )
     @billing_detail.save!
-    @dib = Dib.new(user_id: current_user.id, billing_detail_id: @billing_detail.id, product_id: params[:product_id])
+    @dib = Dib.new(
+      user_id: current_user.id,
+      billing_detail_id: @billing_detail.id,
+      product_id: params[:product_id],
+      medium: 'american-apparel-t-shirt',
+      color: params[:color] || 'ash',
+      size: params[:size] || 'lrg'
+    )
     @dib.save!
 
     redirect_to controller: 'products'

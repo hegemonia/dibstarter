@@ -11,11 +11,11 @@
           <span class="sr-only"><%= product.conversion_percentage %>% Complete</span>
         </div>
       </div>
-      <div class="">
+      <div class="progress-caption">
         <% if product.dibs.count.zero? %>
-          <p>No dibs yet!</p>
+          <h4>No dibs yet!</h4>
         <% else %>
-          <p><%= product.dibs.count %> dibbed, <%= product.outstanding %> to go!</p>
+          <h4><%= product.dibs.count %> dibbed, <%= product.outstanding %> to go!</h4>
         <% end %>
       </div>
 

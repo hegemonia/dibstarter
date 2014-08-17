@@ -6,6 +6,9 @@ class Dib < ActiveRecord::Base
   before_validation :default_values
   validates_presence_of :state, :user, :product, :billing_detail, :medium, :color, :size
 
+  scope :initial, -> { where state: 'initial' }
+  scope :ordered, -> { where state: 'ordered' }
+
   private
 
   def default_values

@@ -1,10 +1,6 @@
-RAILS_ROOT=File.expand_path("../../", __FILE__)
-PUBLIC=File.join(RAILS_ROOT, "public")
-
 require 'httmultiparty'
 require 'json'
 require 'yaml'
-require File.expand_path('config/environment', RAILS_ROOT)
 
 class ScalablePress
   include HTTMultiParty
@@ -29,6 +25,8 @@ class ScalablePress
       end
     end
   end
+
+  private
 
   def charge(dib)
     Stripe.api_key = STRIPE_SECRET_KEY
@@ -87,5 +85,3 @@ class ScalablePress
     end
   end
 end
-
-ScalablePress.new.create_orders

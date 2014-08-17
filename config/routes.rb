@@ -7,9 +7,13 @@ Rails.application.routes.draw do
     resources :dibs
   end
 
+  resources :admin
+
   scope :user do
     resources :billing_details
   end
+
+  post 'admin/create_orders' => 'admin#create_orders'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

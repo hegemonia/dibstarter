@@ -1,0 +1,8 @@
+STRIPE_PUBLISHABLE_KEY = ENV["STRIPE_PUBLISHABLE_KEY"]
+STRIPE_SECRET_KEY = ENV["STRIPE_SECRET_KEY"]
+Stripe.api_key = STRIPE_SECRET_KEY
+
+if Rails.env.production?
+  STRIPE_SECRET_KEY or raise "Required Environment Var: STRIPE_SECRET_KEY"
+  STRIPE_PUBLISHABLE_KEY or raise "Required Environment Var: STRIPE_PUBLISHABLE_KEY"
+end

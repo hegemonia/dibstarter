@@ -118,3 +118,64 @@
       dimensions:
         height: 4.18
       placement: Center
+
+- name: Hallow’s Eve
+  type: dtg
+  price: 20.00
+  color: white
+  artist: MelS
+  sides:
+    front:
+      artwork: /images/beforexmas.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Calvinball
+  type: dtg
+  price: 20.00
+  color: white
+  artist: LPyne
+  sides:
+    front:
+      artwork: /images/calvinball.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Love!
+  type: dtg
+  price: 20.00
+  color: white
+  artist: orabbit
+  sides:
+    front:
+      artwork: /images/corgi.png
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Probable Cause
+  type: dtg
+  price: 20.00
+  color: white
+  artist: qetza
+  sides:
+    front:
+      artwork: /images/probablecause.png
+      dimensions:
+        height: 4.18
+      placement: Center
+
+- name: Wisps
+  type: dtg
+  price: 20.00
+  color: white
+  artist: tjost
+  sides:
+    front:
+      artwork: /images/wisps.jpg
+      dimensions:
+        height: 4.18
+      placement: Center
+

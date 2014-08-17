@@ -1,6 +1,7 @@
 <div class="container">
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-signin", :role=>"form"}) do |f| %>
+    <%= devise_error_messages! %>
     <%= f.email_field :email, :placeholder => "Email address", :class => "form-control" %>
     <%= f.password_field :password, :placeholder => "Password", :class => "form-control" %>
     <% if devise_mapping.rememberable? -%>
@@ -8,6 +9,5 @@
     <% end -%>
     <%= f.submit "Log in", :class => "btn btn-large btn-primary btn-block" %>
   <br/>
-  <%= render "devise/shared/links" %>
   <% end %>
 </div>

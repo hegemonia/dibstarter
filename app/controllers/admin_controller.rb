@@ -4,11 +4,11 @@ class AdminController < ApplicationController
 
   def index
     @user = current_user
+    @dibs = Dib.not_initial
   end
 
   def create_orders
     ScalablePress.new.create_orders
-
     redirect_to :action => :index
   end
 

@@ -1,5 +1,19 @@
 <div class="container">
   <%= form_tag(admin_create_orders_path, method: "post") do %>
-    <%= button_tag('Create Orders') %>
+    <%= button_tag('Create Orders', :class=>"btn btn-primary") %>
+  <% end %>
+
+  <table class="table order-table">
+    <tr>
+      <th>Customer</th>
+      <th>Order</th>
+      <th>Charge</th>
+    <tr>
+  <% @dibs.each do |dib| %>
+    <tr>
+      <td><%= dib.user.email %></td>
+      <td><%= dib.order_id %></td>
+      <td><%= dib.charge_id %></td>
+    <tr>
   <% end %>
 </div>

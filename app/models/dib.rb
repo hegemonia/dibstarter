@@ -8,9 +8,17 @@ class Dib < ActiveRecord::Base
 
   scope :initial, -> { where state: 'initial' }
   scope :ordered, -> { where state: 'ordered' }
+  scope :not_initial, -> { where('state != ?', 'initial') }
 
-  def order!
+  def order! order_id
+    self.order_id = order_id
     self.state = 'ordered'
+    save!
+  end
+
+  def pay! charge_id
+    self.charge_id = charge_id
+    self.state = 'payed'
     save!
   end
 

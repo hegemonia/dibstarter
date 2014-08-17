@@ -1,4 +1,4 @@
-require 'httmultiparty'
+  require 'httmultiparty'
 require 'json'
 require 'yaml'
 
@@ -16,34 +16,38 @@ class ScalablePress
         billing_detail = dib.billing_detail
         order_token = create_quote(dib, billing_detail, product.design_type, product.design_id)
         puts(order_token)
-        order_id = create_order(order_token)
-        puts("ORDER ID: " + order_id)
-        charge(dib)
-        dib.order!
-        puts("DIB STATE: " + dib.state)
-        OrderPlacementMailer.send_order_placed_email(dib).deliver
+        charge = perform_charge(dib)
+
+        if charge
+          puts("CHARGE ID: #{charge.id}")
+          dib.pay! charge.id
+  
+          order_id = create_order(order_token)
+          dib.order! order_id
+
+          puts("DIB: #{dib.inspect}")
+          OrderPlacementMailer.send_order_placed_email(dib).deliver
+        end
       end
     end
   end
 
   private
 
-  def charge(dib)
-    Stripe.api_key = STRIPE_SECRET_KEY
-
+  def perform_charge(dib)
     # Get the credit card details submitted by the form
     token = dib.billing_detail.payment_token
 
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
-        charge = Stripe::Charge.create(
+      Stripe::Charge.create(
         :amount => dib.product.price_in_cents,
         :currency => "usd",
         :card => token,
         :description => dib.product.description
       )
-      rescue Stripe::CardError => e
-      # The card has been declined
+    rescue Stripe::CardError => e
+      puts e  
     end
 
   end

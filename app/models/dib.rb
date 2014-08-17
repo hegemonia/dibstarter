@@ -9,6 +9,11 @@ class Dib < ActiveRecord::Base
   scope :initial, -> { where state: 'initial' }
   scope :ordered, -> { where state: 'ordered' }
 
+  def order!
+    self.state = 'ordered'
+    save!
+  end
+
   private
 
   def default_values
